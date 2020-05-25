@@ -1,39 +1,10 @@
+
 <ul class="topnav">
-   <li><a class="active" href="#home">Home</a></li>
-   <li><a href="#about">About</a></li>
-   <li><a href="#contact">Contact</a></li>
+   <li><a class="active" routerLink="/mainpage">Home</a></li>
+   <li><a routerLink='/addtask'>Add form</a></li>
+   <li><a href="mainpage">Contact</a></li>
    <li><a href="#csignup">Sign Up</a></li>
  </ul>
   <h1 style="text-align: center; font-family: Sofia;">To Do application</h1>
-<div>
-   <button class="button2">Add Task</button>
-</div>
 
-<div class="container">
-   
-   <div class="row">
-      <h4 style="text-align: left">New</h4>
-   <button class="card-button">Sign in</button>
-   <button class="card-button">Sign up</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-   <button class="card-button">Sign out</button>
-
-   </div>
-  
-   <div class="row">
-      <h4 style="text-align: left">In-progress</h4>
-      <button class="card-button">Todo list</button>
-      <button class="card-button">Bb</button>
-   </div>
-   <div class="row">
-      <h4 style="text-align: left">Completed</h4>
-      <button class="card-button">Back end</button>
-   </div>
-
-</div>
+  <router-outlet></router-outlet>
