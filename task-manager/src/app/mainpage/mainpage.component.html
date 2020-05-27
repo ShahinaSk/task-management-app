@@ -8,7 +8,7 @@
     <div class="row">
        <h4 style="text-align: left">New</h4>
        <div *ngIf="firstBoard === true">
-        <button type="button">
+        <button type="button" class="card-button" routerLink="/viewtask">
             {{taskData[0]}}
         </button>
     </div>
@@ -17,7 +17,7 @@
     <div class="row">
        <h4 style="text-align: left">In-progress</h4>
        <div *ngIf="secondBoard === true">
-       <button type="button">
+       <button type="button" class="card-button" routerLink="/viewtask">
         {{taskData[0]}}
     </button>
     </div>
@@ -25,12 +25,11 @@
     <div class="row">
        <h4 style="text-align: left">Completed</h4>
        <div *ngIf="thirdBoard == true">
-       <button type="button">
+       <button type="button" class="card-button" routerLink="/viewtask">
         {{taskData[0]}}
     </button>
     </div>
     </div>
- 
-   
- 
  </div>
+
+ <app-viewtaskdetails [viewData]="taskData"></app-viewtaskdetails>

@@ -25,6 +25,7 @@ export class AddtaskformComponent implements OnInit {
    dueDate:Date = new Date
 
   data: any[] = []
+  
   onSubmit(taskName,labelName,status,dueDate)
    {
      console.log("hi")
