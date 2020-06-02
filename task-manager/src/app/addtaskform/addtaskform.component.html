@@ -1,44 +1,41 @@
 <div class="container">
     <h1> Add Task Form</h1>
 
-    <form #userForm="ngForm" (ngSubmit)="onSubmit(taskName,labelName,status,dueDate)" novalidate>
+    
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <div [formGroup]="form">
       <div class="form-group">
         <label>Name</label>
-        <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched"
-        class="form-control" name="taskName" [(ngModel)]="taskName">
+        <input type="text" required  class="form-control" name="taskName" formControlName="taskName">
   <!--      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small> -->
       </div>
-    
+    </div>
+    <div [formGroup]="form">
       <div class="form-group">
         <label>Label</label>
-        <input type="text" required #label="ngModel" [class.is-invalid]="label.invalid && label.touched"
-        class="form-control" name="labelName" [(ngModel)]="labelName">
+        <input type="text" required  class="form-control" name="labelName" formControlName="labelName">
       </div>
-    
+    </div>
+    <div [formGroup]="form">
       <div class="form-group">
         <label for="Select Status">Status</label>
-         <select class="custom-select" #stat="ngModel" name="status" [(ngModel)]="status" required> 
+         <select class="custom-select"  name="status" formControlName="status" required> 
             <option value="default">Select Status</option>
             <option *ngFor="let st of statusArray"> {{st}}</option>
          </select>
       </div>
+    </div>
     
+    <div [formGroup]="form">
       <div class="form-group">
         <label>Due Date</label>
-        <input type="date" #duedate="ngModel" [class.is-invalid]="duedate.invalid && duedate.touched" class="form-control" name="dueDate" [(ngModel)]="dueDate">
+        <input type="date" class="form-control" name="dueDate" formControlName="dueDate">
       </div>
-      <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit">Submit</button>
+      </div>
+      <button type="button"[disabled]="userForm.form.invalid" class="btn btn-primary" type="submit">Submit</button>
     </form>
+</div>    
 
- <!--<div *ngFor="let p of data">
-   <p>{{p}}</p>
- </div>  -->
-
-   <router-outlet></router-outlet>  
-
-
-</div>
-    
-<app-mainpage [taskData]="data"></app-mainpage> 
-
+<!--<app-mainpage [taskData]="this.userModel"></app-mainpage> 
+-->
 
