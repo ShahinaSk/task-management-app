@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { NewTask } from "../addtaskform/newtask";
+import { Router , ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -8,35 +9,36 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainpageComponent implements OnInit {
 
+data:any;
+
   firstBoard = false
   secondBoard = false
   thirdBoard = false
 
 
-@Input()    
-    taskData: any[] = []
 
+  
 
-
-  constructor() {
-
-    
-   }
+  constructor(private router: Router,private activatedRouter: ActivatedRoute) {}
 
    ngDoCheck()
    {
-     if(this.taskData[2] == 'New')
+     if(this.data.status == 'New')
        this.firstBoard = true
-     else if(this.taskData[2] == 'In-progress')
+     else if(this.data.status == 'In-progress')
        this.secondBoard = true
-     else if(this.taskData[2] == 'Completed')
-       this.thirdBoard = true    
+     else if(this.data.status == 'Completed')
+       this.thirdBoard = true  
+       
+
+       //console.log(this.taskData.status)
    }
 
-  ngOnInit() {
+   ngOnInit() {
+    this.activatedRouter.queryParams.subscribe((params)=>{
+      this.data= JSON.parse(atob(params.data))
+    })
 
-    
-      
   }
 
 }

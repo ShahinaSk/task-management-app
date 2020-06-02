@@ -2,15 +2,25 @@
 <div>
     <button class="button2"  routerLink="/addtask">Add Task</button>
  </div>
- 
+
  <div class="container">
     
     <div class="row">
        <h4 style="text-align: left">New</h4>
        <div *ngIf="firstBoard === true">
-        <button type="button" class="card-button" routerLink="/viewtask">
-            {{taskData[0]}}
-        </button>
+         <div class="btn-group">
+            <button type="button" class="btn btn-danger">Action</button>
+            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
     </div>
     </div>
    
@@ -18,7 +28,7 @@
        <h4 style="text-align: left">In-progress</h4>
        <div *ngIf="secondBoard === true">
        <button type="button" class="card-button" routerLink="/viewtask">
-        {{taskData[0]}}
+        {{data.taskName}}
     </button>
     </div>
        </div>
@@ -26,10 +36,11 @@
        <h4 style="text-align: left">Completed</h4>
        <div *ngIf="thirdBoard == true">
        <button type="button" class="card-button" routerLink="/viewtask">
-        {{taskData[0]}}
+        {{data.taskName}}
     </button>
     </div>
     </div>
- </div>
+    
+   </div>
 
- <app-viewtaskdetails [viewData]="taskData"></app-viewtaskdetails>
+ <!--<app-viewtaskdetails [viewData]="taskData"></app-viewtaskdetails> -->

@@ -8,7 +8,7 @@ import { AddtaskformComponent } from "/home/shahina/task-management-app/task-man
 import { RouterModule, Routes } from "@angular/router";
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { ViewtaskdetailsComponent } from './viewtaskdetails/viewtaskdetails.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -24,7 +24,8 @@ import { ViewtaskdetailsComponent } from './viewtaskdetails/viewtaskdetails.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
